@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{$title}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 5px;
+            font-family: 'Times New Roman', serif;
+            padding: 10px;
+        }
+
+        .vertical-text {
+            position: absolute;
+            top: 550px;
+            left: -350px;
+            transform: rotate(-90deg);
+            letter-spacing: 2px;
+            font-weight: 900;
+            color: #ff6600;
+        }
+
+        .school_name {
+            font-weight: 900;
+            color: #0b4762;
+            margin-bottom: 0;
+        }
+
+        .header {
+            /* text-align: center; */
+            padding-bottom: 10px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #002060;
+        }
+
+        .header p {
+            margin: 0;
+        }
+
+        .header img {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .sub-header {
+            text-align: center;
+            margin: 10px 0 0px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .sub-header h2 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .info-table,
+        .marks-table,
+        .grade-table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 5px;
+            margin-left: 90px;
+            font-size: 16px;
+        }
+
+        .info-table td:nth-child(2) {
+            border-bottom: 1px dotted;
+        }
+
+        /* .info-table td{
+                border:none;
+            } */
+        .marks-table th,
+        .marks-table td,
+        .grade-table td,
+        .grade-table th {
+            border: 1px solid #000;
+            padding: 0;
+        }
+
+        .grade-table {
+            font-size: 14px;
+        }
+
+        .grade-table td,
+        .grade-table th {
+            width: 25%;
+            text-align: center;
+            /* Optional: for better alignment */
+        }
+
+        .marks-table th {
+            text-align: center;
+        }
+
+        .remarks {
+            margin-left: 80px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .footer-strip {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .top-text {
+            color: #ff6600;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .top-text a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .wrapper {
+            text-align: center;
+            position: relative;
+        }
+
+        .top-text {
+            color: #914d26;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .back-strip {
+            background-color: #BE5E38;
+            /* darker tone */
+            width: 100%;
+            height: 25px;
+            margin: 0;
+            clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+            position: relative;
+            z-index: 1;
+            overflow: visible;
+        }
+
+        .trapezium {
+            background-color: #D08D62;
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 0;
+            width: 50%;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+            position: absolute;
+            bottom: 0rem;
+            left: 25%;
+            z-index: 2;
+        }
+
+        /* footer end */
+        .bold {
+            font-weight: bold;
+        }
+
+        @media print {
+            .vertical-text {
+                left: -300px;
+            }
+
+            .btn {
+                display: none !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header row pb-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="text-start">
+                <strong>Be Educated</strong>
+            </div>
+            <div class="text-center flex-grow-1" style="color: #ff6600;">
+                <strong>!! तमसो माँ ज्योतिर्गम्य !!</strong>
+            </div>
+            <div class="text-end">
+                <strong>Go Ahead</strong>
+            </div>
+        </div>
+        <div class="col-2 text-end">
+            <img src="{{ env('APP_URL') . 'images/' . $settings->store_icon }}" alt="School Logo">
+        </div>
+        <div class="col-8 text-center">
+            <h1 class="school_name">M. D. VIDYA MANDIR SCHOOL</h1>
+            <p>English Medium, Co-Educational, Sec. School Affiliated to BSEH, Bhiwani</p>
+            <p style="color: #ff6600">School Code : 06683 | Reg. No.1394/HSR/10th/BOSE</p>
+        </div>
+    </div>
+
+    <div class="sub-header">
+        <h2>Progress Report</h2>
+    </div>
+    <p class="text-center">FINAL EXAMINATION (2024-25)</p>
+    <p class="text-center">CLASS: <strong>Nur-A</strong></p>
+    <p class="text-center">ROLL NO: <strong>33</strong></p>
+    <div>
+        <div class="vertical-text">
+            <h2>COMMITTED TO EXCELLENCE IN EDUCATION</h2>
+        </div>
+        <table class="info-table">
+            <tbody>
+                <tr>
+                    <td>NAME:</td>
+                    <td><strong>Test name</strong></td>
+                </tr>
+                <tr>
+                    <td>DATE OF BIRTH:</td>
+                    <td><strong>Test name</strong></td>
+                </tr>
+                <tr>
+                    <td>FATHER'S NAME:</td>
+                    <td><strong>Test name</strong></td>
+                </tr>
+                <tr>
+                    <td>MOTHER'S NAME:</td>
+                    <td><strong>Test name</strong></td>
+                </tr>
+                <tr>
+                    <td>ADMISSION NO.:</td>
+                    <td><strong>Test name</strong></td>
+                </tr>
+                <tr>
+                    <td>ADDRESS:</td>
+                    <td><strong>Test name</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="marks-table">
+            <thead>
+                <tr>
+                    <th>Scholastic Area</th>
+                    <th colspan="2">Final Examination</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks Obtained</th>
+                    <th>Maximum Marks</th>
+                    <th>According to Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>English</td>
+                    <td class="text-center"><strong>58</strong></td>
+                    <td class="text-center"><strong>75</strong></td>
+                    <td class="text-center"><strong>B1</strong></td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td class="text-center"><strong>58</strong></td>
+                    <td class="text-center"><strong>75</strong></td>
+                    <td class="text-center"><strong>B1</strong></td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td class="text-center"><strong>58</strong></td>
+                    <td class="text-center"><strong>75</strong></td>
+                    <td class="text-center"><strong>B1</strong></td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td class="text-center"><strong>58</strong></td>
+                    <td class="text-center"><strong>75</strong></td>
+                    <td class="text-center"><strong>B1</strong></td>
+                </tr>
+                <tr>
+                    <td>Hindi</td>
+                    <td class="text-center"><strong>57</strong></td>
+                    <td class="text-center"><strong>75</strong></td>
+                    <td class="text-center"><strong>B2</strong></td>
+                </tr>
+                <tr>
+                    <td>Mathematics</td>
+                    <td class="text-center"><strong>63</strong></td>
+                    <td class="text-center"><strong>75</strong></td>
+                    <td class="text-center"><strong>B1</strong></td>
+                </tr>
+                <tr>
+                    <td class="bold">Total</td>
+                    <td class="bold text-center">178</td>
+                    <td class="bold text-center">225</td>
+                    <td class="bold text-center">79.1%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row remarks">
+            <div class="col-6">
+                <p>Class Teacher’s Remark:<strong>Very Good </strong> </p>
+            </div>
+            <div class="col-6">
+                <p> Result:<strong> Promoted to next class</strong></p>
+            </div>
+            <div class="col-3 mt-4">
+                <p> Date: 15-Mar-2025</p>
+            </div>
+            <div class="col-3 mt-4">
+                <p> Class In-charge </p>
+            </div>
+            <div class="col-6 mt-4">
+                <p> Principal </p>
+            </div>
+
+        </div>
+
+        <table class="grade-table">
+            <tr>
+                <td colspan="4" class="text-center">
+                    Instructions: Grading scale for scholastic areas. Grades are awarded on a 8-point
+                    grading scale as follows:
+                </td>
+            </tr>
+            <tr>
+                <th>MARKS RANGE</th>
+                <th>GRADES</th>
+                <th>MARKS RANGE</th>
+                <th>GRADES</th>
+            </tr>
+            <tr>
+                <td>91 - 100</td>
+                <td>A1</td>
+                <td>81 - 90</td>
+                <td>A2</td>
+            </tr>
+            <tr>
+                <td>71 - 80</td>
+                <td>B1</td>
+                <td>61 - 70</td>
+                <td>B2</td>
+            </tr>
+            <tr>
+                <td>51 - 60</td>
+                <td>C1</td>
+                <td>41 - 50</td>
+                <td>C2</td>
+            </tr>
+            <tr>
+                <td>33 - 40</td>
+                <td>D</td>
+                <td>32 & BELOW</td>
+                <td>E (Needs Improvement)</td>
+            </tr>
+            <tr>
+                <td style="border: none; text-align: left;" colspan="4"> This report card is not valid without signature
+                    of Class In-charge and Principal.</td>
+            </tr>
+        </table>
+
+
+
+        <button class="btn btn-primary mt-3" onclick="window.print()">Print</button>
+
+        <!--  -->
+    </div>
+    <!-- footer -->
+    <div class="wrapper">
+        <div class="top-text">
+            www.mdvm.co.in | mdsssbhainiamirpur@gmail.com
+        </div>
+
+        <div class="back-strip"></div>
+
+        <div class="trapezium">
+            Bhaini Amirpur, Hisar | Mob. 9996307127, 8901010112
+        </div>
+    </div>
+    <!-- footer end -->
+</body>
+
+</html>
